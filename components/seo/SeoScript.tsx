@@ -21,7 +21,7 @@ export default function SeoScript() {
           `,
         }}
       />
-      
+
       {/* 结构化数据 - 组织信息 */}
       <Script
         id='schema-org-organization'
@@ -47,10 +47,10 @@ export default function SeoScript() {
               },
               "description": "XXgames提供最佳游戏导航服务，帮助玩家发现2024年最优质的游戏"
             }
-          `
+          `,
         }}
       />
-      
+
       {/* 结构化数据 - 网站信息 */}
       <Script
         id='schema-org-website'
@@ -69,10 +69,10 @@ export default function SeoScript() {
                 "query-input": "required name=search_term_string"
               }
             }
-          `
+          `,
         }}
       />
-      
+
       {/* 结构化数据 - 面包屑导航 */}
       <Script
         id='schema-org-breadcrumb'
@@ -103,7 +103,7 @@ export default function SeoScript() {
                 }
               ]
             }
-          `
+          `,
         }}
       />
     </>

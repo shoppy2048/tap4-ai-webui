@@ -54,9 +54,9 @@ export default function GameSchema({
 
   return (
     <Script
-      id="schema-game"
-      type="application/ld+json"
+      id='schema-game'
+      type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: JSON.stringify(gameSchema) }}
     />
   );
-} 
+}

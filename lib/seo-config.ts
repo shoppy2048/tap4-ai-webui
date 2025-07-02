@@ -48,16 +48,7 @@ export const MAIN_PAGES = {
 };
 
 // 分类列表
-export const GAME_CATEGORIES = [
-  'action',
-  'adventure',
-  'rpg',
-  'strategy',
-  'simulation',
-  'sports',
-  'racing',
-  'puzzle',
-];
+export const GAME_CATEGORIES = ['action', 'adventure', 'rpg', 'strategy', 'simulation', 'sports', 'racing', 'puzzle'];
 
 // 语言版本
 export const LANGUAGES = {
@@ -82,4 +73,4 @@ export function getOgImageUrl(customPath?: string): string {
 export function getCanonicalUrl(path: string = '', locale: string = 'cn'): string {
   const localePath = locale === 'en' ? '' : `/${locale}`;
   return formatSiteUrl(`${localePath}${path}`);
-} 
+}

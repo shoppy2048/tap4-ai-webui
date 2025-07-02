@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 上一周的日期，用于标记最近更新的内容
   const lastWeek = new Date();
   lastWeek.setDate(lastWeek.getDate() - 7);
-  
+
   // 每月的日期，用于标记不经常更新的内容
   const lastMonth = new Date();
   lastMonth.setDate(lastMonth.getDate() - 30);
@@ -62,7 +62,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 动态添加分类页面
   // 注意：实际应用中，您可能需要从数据库获取这些类别
   const categories = ['action', 'adventure', 'rpg', 'strategy', 'simulation', 'sports'];
-  
+
   categories.forEach((category) => {
     sitemapRoutes.push({
       url: `category/${category}`,

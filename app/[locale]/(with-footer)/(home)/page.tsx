@@ -20,7 +20,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     locale,
     namespace: 'Metadata.home',
   });
-  
+
   const title = t('title');
   const description = t('description');
   const keywords = t('keywords');
@@ -49,7 +49,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
           width: 1200,
           height: 630,
           alt: 'XXgames游戏导航',
-        }
+        },
       ],
       locale,
       siteName: 'XXgames',
