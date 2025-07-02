@@ -5,8 +5,9 @@ import { Toaster as Sonner } from 'sonner';
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
-const Toaster = ({ ...props }: ToasterProps) => {
+function Toaster(props: ToasterProps) {
   const { theme = 'system' } = useTheme();
+  const { ...restProps } = props;
 
   return (
     <Sonner
@@ -21,9 +22,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
           cancelButton: 'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
         },
       }}
-      {...props}
+      {...restProps}
     />
   );
-};
+}
 
+export default Toaster;
 export { Toaster };

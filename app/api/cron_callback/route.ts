@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     }
 
     // get response data
-    const { description, detail, name, screenshot_data, screenshot_thumbnail_data, tags, title, url } =
+    const { description, detail, name, screenshot_data: screenshotData, screenshot_thumbnail_data: screenshotThumbnailData, tags, title, url } =
       await req.json();
 
     const supabase = createClient();
@@ -55,8 +55,8 @@ export async function POST(req: NextRequest) {
         .update({
           content: description,
           detail,
-          image_url: screenshot_data,
-          thumbnail_url: screenshot_thumbnail_data,
+          image_url: screenshotData,
+          thumbnail_url: screenshotThumbnailData,
           tag_name: tags && tags.length ? tags[0] : 'other',
           category_name: tags && tags.length ? tags[0] : 'other',
           title,
@@ -67,16 +67,14 @@ export async function POST(req: NextRequest) {
       if (updateWebNavigationError) {
         throw new Error(updateWebNavigationError.message);
       }
-
-      console.log('Update result succeed!');
     } else {
       // Insert new entry
       const { error: insertWebNavigationError } = await supabase.from('web_navigation').insert({
         content: description,
         detail,
         name,
-        image_url: screenshot_data,
-        thumbnail_url: screenshot_thumbnail_data,
+        image_url: screenshotData,
+        thumbnail_url: screenshotThumbnailData,
         tag_name: tags && tags.length ? tags[0] : 'other',
         category_name: tags && tags.length ? tags[0] : 'other',
         title,
@@ -86,8 +84,6 @@ export async function POST(req: NextRequest) {
       if (insertWebNavigationError) {
         throw new Error(insertWebNavigationError.message);
       }
-
-      console.log('Save result succeed!');
     }
 
     // Update submit table
@@ -97,7 +93,6 @@ export async function POST(req: NextRequest) {
       throw new Error(updateSubmitError.message);
     }
 
-    console.log('Update submit succeed!');
     return NextResponse.json({ message: 'Success' });
   } catch (error) {
     return NextResponse.json({ error: Error }, { status: 500 });

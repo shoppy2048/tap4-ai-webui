@@ -34,8 +34,6 @@ export async function POST(req: NextRequest) {
 
     const supabase = createClient();
 
-    console.log('supabase connected!');
-
     const [{ data: categoryList, error: categoryListError }, { data: submitList, error: submitListError }] =
       await Promise.all([
         supabase.from('navigation_category').select(),
@@ -47,7 +45,6 @@ export async function POST(req: NextRequest) {
           .order('created_at', { ascending: true }),
       ]);
 
-    console.log('supabase get categoryList succeed!');
     if (categoryListError || !categoryList) {
       return NextResponse.json({ error: 'Category is null' }, { status: 201 });
     }
@@ -55,7 +52,6 @@ export async function POST(req: NextRequest) {
     if (submitListError || !submitList || !submitList[0]) {
       return NextResponse.json({ error: 'Submit list is null' }, { status: 202 });
     }
-    console.log('supabase get submitList succeed!');
 
     const callbackUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/api/cron_callback`;
 
@@ -66,8 +62,6 @@ export async function POST(req: NextRequest) {
       callback_url: callbackUrl,
       key: cronKey,
     });
-
-    console.log('api get crawler succeed!');
 
     if (res.code !== 200) {
       throw new Error(res.msg);
