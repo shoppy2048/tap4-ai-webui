@@ -1,0 +1,27 @@
+{
+  "name": "游戏导航目录",
+  "short_name": "游戏导航",
+  "description": "发现2024年最佳游戏，尽在游戏导航目录！",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#222129",
+  "theme_color": "#4169E1",
+  "icons": [
+    {
+      "src": "/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

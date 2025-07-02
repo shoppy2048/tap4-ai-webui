@@ -1,4 +1,21 @@
-Sitemap: https://www.tap4.ai/sitemap.xml
-
+# XXgames 网站爬虫规则
 User-agent: *
 Allow: /
+
+# 防止爬取API路由
+Disallow: /api/
+
+# 禁止爬取管理页面
+Disallow: /admin/
+Disallow: /*?revalidate=*
+
+# 媒体文件缓存设置
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /icons/
+
+# 站点地图
+Sitemap: https://xxgames.com/sitemap.xml
+
+# 首选域名
+Host: https://xxgames.com

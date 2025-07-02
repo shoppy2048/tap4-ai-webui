@@ -6,6 +6,7 @@ import { CircleChevronRight } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 import { RevalidateOneHour } from '@/lib/constants';
+import { formatSiteUrl, getOgImageUrl } from '@/lib/seo-config';
 import Faq from '@/components/Faq';
 import SearchForm from '@/components/home/SearchForm';
 import WebNavCardList from '@/components/webNav/WebNavCardList';
@@ -19,14 +20,46 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     locale,
     namespace: 'Metadata.home',
   });
+  
+  const title = t('title');
+  const description = t('description');
+  const keywords = t('keywords');
 
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL as string),
-    title: t('title'),
-    description: t('description'),
-    keywords: t('keywords'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://xxgames.com'),
+    title,
+    description,
+    keywords,
     alternates: {
       canonical: './',
+      languages: {
+        'en-US': '/en',
+        'zh-CN': '/cn',
+        'zh-TW': '/tw',
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: formatSiteUrl(),
+      images: [
+        {
+          url: getOgImageUrl(),
+          width: 1200,
+          height: 630,
+          alt: 'XXgames游戏导航',
+        }
+      ],
+      locale,
+      siteName: 'XXgames',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [getOgImageUrl()],
+      creator: '@XXgames',
     },
   };
 }
