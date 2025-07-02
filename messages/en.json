@@ -12,7 +12,7 @@
   },
   "Footer": {
     "title": "Open-source Game Directory",
-    "subTitle": "Discover the best games of 2024 with the Game Directory!",
+    "subTitle": "Discover the best games of 2025 with the Game Directory!",
     "support": "Support",
     "tap4": "Game Directory",
     "tattoo": "Game Recommendations",
@@ -118,7 +118,7 @@
     "goHome": "go home"
   },
   "Home": {
-    "title": "Discover The Best Games 2024",
+    "title": "Discover The Best Games 2025",
     "subTitle": "Get your favorite games in the Open-source Game Directory. Game lists are updated daily. It's free to submit here to enhance your game's visibility now.",
     "ai-navigate": "Games List",
     "exploreMore": "Get More Games",
@@ -159,7 +159,7 @@
     }
   },
   "Explore": {
-    "title": "Discover The Best Games 2024",
+    "title": "Discover The Best Games 2025",
     "subTitle": "Get your favorite games in Game Directory. Game lists are updated daily."
   },
   "Metadata": {
@@ -172,7 +172,7 @@
       "titleSubfix": "Game Directory"
     },
     "explore": {
-      "title": "Best Games Explore 2024 | Open-source Game Directory",
+      "title": "Best Games Explore 2025 | Open-source Game Directory",
       "titlePrefix": "Game Directory Explore",
       "titleSuffix": "Game Directory",
       "description": "Game Directory is a tool that provides a free game directory. Get your favorite games with Game Directory, which aims to collect all games and provide the best experience for users.",

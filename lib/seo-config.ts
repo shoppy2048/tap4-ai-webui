@@ -3,14 +3,17 @@
  * 包含网站SEO相关的常量和配置
  */
 
-// 网站域名
-export const SITE_DOMAIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://xxgames.com';
+// 获取当前站点URL
+export const SITE_DOMAIN =
+  process.env.NODE_ENV === 'production'
+    ? process.env.NEXT_PUBLIC_SITE_URL || 'https://xxgames.space'
+    : 'http://localhost:3000';
 
 // 默认元数据
 export const DEFAULT_METADATA = {
-  title: 'XXgames - 探索最佳游戏 2024',
+  title: 'XXgames - 探索最佳游戏 2025',
   description: '在XXgames游戏导航目录中获取您喜欢的游戏。游戏列表每天更新。现在免费提交以增强您的游戏曝光度。',
-  keywords: ['游戏', '游戏导航', '游戏目录', 'XXgames', '免费游戏', '游戏列表', '2024游戏'],
+  keywords: ['游戏', '游戏导航', '游戏目录', 'XXgames', '免费游戏', '游戏列表', '2025游戏'],
 };
 
 // 社交媒体配置
@@ -57,16 +60,14 @@ export const LANGUAGES = {
   tw: '繁体中文',
 };
 
-// 格式化网站URL（确保以https://开头，结尾不带斜杠）
-export function formatSiteUrl(path: string = ''): string {
-  const base = SITE_DOMAIN.replace(/\/+$/, '');
-  const cleanPath = path.replace(/^\/+/, '');
-  return cleanPath ? `${base}/${cleanPath}` : base;
+// 获取Open Graph图片URL
+export function getOgImageUrl() {
+  return `${SITE_DOMAIN}/images/og-image.jpg?v=1`;
 }
 
-// 创建Open Graph图片URL
-export function getOgImageUrl(customPath?: string): string {
-  return customPath ? formatSiteUrl(`images/${customPath}`) : formatSiteUrl('images/og-image.jpg');
+// 格式化网站URL（确保以https://开头，结尾不带斜杠）
+export function formatSiteUrl(path?: string) {
+  return path ? `${SITE_DOMAIN}${path}` : SITE_DOMAIN;
 }
 
 // 获取标准化的规范链接URL
