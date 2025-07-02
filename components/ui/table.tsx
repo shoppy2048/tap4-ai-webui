@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 
 import { cn } from '@/lib/utils';
 
@@ -91,9 +90,6 @@ function TableCell(
 
 const TableCellRef = React.forwardRef(TableCell);
 TableCellRef.displayName = 'TableCell';
-TableCellRef.propTypes = {
-  className: PropTypes.string
-};
 
 function TableCaption(
   { className, ...props }: React.HTMLAttributes<HTMLTableCaptionElement>,
@@ -104,9 +100,6 @@ function TableCaption(
 
 const TableCaptionRef = React.forwardRef(TableCaption);
 TableCaptionRef.displayName = 'TableCaption';
-TableCaptionRef.propTypes = {
-  className: PropTypes.string
-};
 
 export {
   TableRef as Table,
