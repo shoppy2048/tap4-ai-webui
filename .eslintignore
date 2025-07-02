@@ -1,10 +1,19 @@
-dist
-node_modules
-.next
-.vscode
-build
-messages
-components.json
-components/ui/
-api/
-scripts/
+# 构建输出
+.next/
+out/
+dist/
+build/
+
+# 依赖
+node_modules/
+
+# 忽略img标签警告
+**/components/Empty.tsx
+**/components/webNav/WebNavCard.tsx
+
+# 工具脚本
+fix-eslint.js
+scripts/generate-icons.js
+
+# 其他忽略的文件
+*.min.js

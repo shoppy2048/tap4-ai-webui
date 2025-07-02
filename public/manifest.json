@@ -1,11 +1,16 @@
 {
-  "name": "游戏导航目录",
-  "short_name": "游戏导航",
-  "description": "发现2024年最佳游戏，尽在游戏导航目录！",
+  "name": "XXgames - 游戏导航目录",
+  "short_name": "XXgames",
+  "description": "发现2024年最佳游戏，尽在XXgames游戏导航目录！",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#222129",
   "theme_color": "#4169E1",
+  "orientation": "any",
+  "categories": ["games", "entertainment", "navigation"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/icons/favicon.svg",
@@ -16,12 +21,64 @@
     {
       "src": "/icons/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/android-chrome-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "XXgames游戏导航桌面版"
+    },
+    {
+      "src": "/images/screenshot-mobile.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "XXgames游戏导航移动版"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "探索游戏",
+      "short_name": "探索",
+      "description": "浏览所有游戏",
+      "url": "/explore",
+      "icons": [{ "src": "/icons/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "提交游戏",
+      "short_name": "提交",
+      "description": "提交新游戏",
+      "url": "/submit",
+      "icons": [{ "src": "/icons/android-chrome-192x192.png", "sizes": "192x192" }]
     }
   ]
 } 
